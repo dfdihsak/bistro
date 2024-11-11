@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import React from 'react'
+import { useState } from 'react'
 import { generateClient } from 'aws-amplify/data'
 import type { Schema } from '../../amplify/data/resource'
 import { Amplify } from 'aws-amplify'
@@ -26,10 +27,12 @@ function MobileNavLink({
 }
 
 export default function Waitlist() {
+  const [enabled, setEnabled] = useState(true)
   const addEmail = (event: any) => {
     event.preventDefault()
     // add email to Amplify data
     client.models.Todo.create({ content: event.target[0].value })
+    setEnabled(false)
   }
   return (
     <div className="bg-white py-16 sm:py-24">
@@ -60,9 +63,10 @@ export default function Waitlist() {
             />
             <button
               type="submit"
-              className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:bg-gray-600"
+              disabled={!enabled}
             >
-              Notify me
+              {enabled ? 'Notify me' : 'Added!'}
             </button>
           </form>
           <svg
