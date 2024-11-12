@@ -1,3 +1,6 @@
+import angela from '@/images/avatars/angela.png'
+import jessie from '@/images/avatars/jessie.png'
+
 const people = [
   {
     name: 'Leonard Krasner',
@@ -18,7 +21,14 @@ const people = [
 ]
 
 export default function Team() {
+
+
+
   return (
+
+    <section
+      id="team">
+
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
@@ -26,8 +36,7 @@ export default function Team() {
             Meet our leadership
           </h2>
           <p className="mt-6 text-lg/8 text-gray-600">
-            We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
-            best results for our clients.
+            We've known each other since we were 5 
           </p>
         </div>
         <ul
@@ -47,5 +56,7 @@ export default function Team() {
         </ul>
       </div>
     </div>
+
+    </section>
   )
 }

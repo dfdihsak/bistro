@@ -1,24 +1,48 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
+
 const faqs = [
   {
-    question: "Is this cheaper and better than human or answering service?",
+    question: "How does the AI learn our menu?",
     answer:
-      "Bistro IQ surpasses traditional answering services by delivering superior, AI-driven customer interactions at a quarter of the cost. Operating 24/7, it provides consistent, high-quality service, including handling complex queries and learning from each interaction to improve over time. Unlike variable human services, Loman.ai ensures reliability and precision in every call. It's not just more affordable; it's a smarter, more efficient solution, offering scalability and enhanced customer experience that traditional services can't match.",
+      "We set up our AI with your full menu, including item names, descriptions, and modifiers like sizes or customization options. Any updates - such as seasonal items or price changes - can be easily added to ensure that the AI always provides accurate, up-to-date information",
   },
 
   {
-    question: "Does Bistro IQ get orders right?",
+    question: "Will the AI inform customers about special hours or holiday closures?",
     answer:
-      "Loman.ai surpasses traditional answering services by delivering superior, AI-driven customer interactions at a quarter of the cost. Operating 24/7, it provides consistent, high-quality service, including handling complex queries and learning from each interaction to improve over time. Unlike variable human services, Loman.ai ensures reliability and precision in every call. It's not just more affordable; it's a smarter, more efficient solution, offering scalability and enhanced customer experience that traditional services can't match.",
+      "Absolutely! You can easily update the AI with special hours, holiday closures, or unique events. It will relay this information to customers automatically. This way, customers are always kept in the loop about when they can visit",
   },
 
   {
-    question: "Does Bistro IQ record calls?",
+    question: "Can the AI speak multiple languages?",
     answer:
-      "Conversations can be recorded for quality and training purposes, with full transparency and consent in line with privacy laws. You have control over this feature and can opt in or out according to your business needs.",
+      "Yes! Our AI is designed to serve a diverse customer base by supporting multiple languages. It can detect the language a customer is speaking and seamlessly switch to that language to ensure clear and effective communication. We can set up the AI with your preferred language, helping your restaurant create a welcoming atmosphere for anyone. Currently, our platform supports English, Mandarin, Spanish, and Hindi.",
+
   },
+
+  {
+    question: "How long does it take to set up?",
+    answer:
+      "Setup is quick and easy. Most restaurants are up and running in 1 business day. Our support team will walk you through each step.",
+  },
+
+
+  {
+    question: "Can the AI handle customer complaints?",
+    answer:
+      "Bistro IQ responds to customer complaints professionally, with top-tier customer service. If necessary, the AI is trained to escalate conversations to a human working at the restaurant. Bistro IQ is equipped with advanced natural language processing, allowing it to recognize and respond to a range of customer concerns, from incorrect orders to feedback on service. If a customer expresses dissatisfaction, the AI can provide a polite acknowledgement attempt to resolve simple issues, and escalate more copmlex complaints to your human team. This approach ensures that customers feel heard while allowing your staff to focus on in-person services",
+  },
+
+
+  {
+    question: "Will your system protect our customers' information?",
+    answer:
+      "We take data privacy seriously. Our platform uses industry-standardd security protocols to keep customer information secure and complies with all data protection regulations",
+  },
+
+  
 
 
   // More questions...
