@@ -1,10 +1,20 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from '@headlessui/react'
 import { RocketLaunchIcon } from '@heroicons/react/24/outline'
 
-export default function WIP({ isOpen, onClose }) {
+interface WIPProps {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export default function WIP({ isOpen, onClose }: WIPProps) {
   const [open, setOpen] = useState(isOpen)
 
   useEffect(() => {
@@ -12,10 +22,14 @@ export default function WIP({ isOpen, onClose }) {
   }, [isOpen])
 
   return (
-    <Dialog open={open} onClose={() => { 
-        setOpen(false); 
-        onClose(); // Notify parent to reset the state
-    }} className="relative z-10">
+    <Dialog
+      open={open}
+      onClose={() => {
+        setOpen(false)
+        onClose() // Notify parent to reset the state
+      }}
+      className="relative z-10"
+    >
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
@@ -29,10 +43,16 @@ export default function WIP({ isOpen, onClose }) {
           >
             <div className="sm:flex sm:items-start">
               <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mx-0 sm:size-10">
-                <RocketLaunchIcon aria-hidden="true" className="size-6 text-gray-600" />
+                <RocketLaunchIcon
+                  aria-hidden="true"
+                  className="size-6 text-gray-600"
+                />
               </div>
               <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                <DialogTitle as="h3" className="text-base font-semibold text-gray-900">
+                <DialogTitle
+                  as="h3"
+                  className="text-base font-semibold text-gray-900"
+                >
                   We're working on it!
                 </DialogTitle>
                 <div className="mt-2">
@@ -47,13 +67,12 @@ export default function WIP({ isOpen, onClose }) {
                 type="button"
                 onClick={() => {
                   setOpen(false)
-                  onClose() 
+                  onClose()
                 }}
                 className="inline-flex w-full justify-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 sm:ml-3 sm:w-auto"
               >
                 Okay!
               </button>
-
             </div>
           </DialogPanel>
         </div>
