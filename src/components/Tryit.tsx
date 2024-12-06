@@ -37,7 +37,6 @@ export default function Tryit() {
     setEnabled(false)
   }
 
-
   const toggleDropdown = (event: React.MouseEvent) => {
     event.stopPropagation()
     setDropdownOpen(!isDropdownOpen)
@@ -46,7 +45,6 @@ export default function Tryit() {
   const closeDropdown = () => {
     setDropdownOpen(false)
   }
-
 
   const handleCountrySelect = (countryCode: string) => {
     setCountryCode(countryCode)
@@ -89,18 +87,18 @@ export default function Tryit() {
 
             <form
               onSubmit={addEmail}
-              className="mx-auto mt-10 flex flex-col max-w-sm gap-y-4"
+              className="mx-auto mt-10 flex max-w-sm flex-col gap-y-4"
             >
               {/* Phone Number Input with Dropdown */}
               <label htmlFor="phone-number" className="sr-only">
                 Phone Number
               </label>
               <div className="relative mt-2">
-                <div className="absolute top-2 left-0 flex items-center pl-3">
+                <div className="absolute left-0 top-2 flex items-center pl-3">
                   <button
                     id="dropdownButton"
                     onClick={toggleDropdown}
-                    className="h-full text-sm flex justify-center items-center bg-transparent text-white focus:outline-none"
+                    className="flex h-full items-center justify-center bg-transparent text-sm text-white focus:outline-none"
                   >
                     <span>{countryCode}</span>
                     <svg
@@ -109,47 +107,49 @@ export default function Tryit() {
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4 ml-1"
+                      className="ml-1 h-4 w-4"
                     >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      />
                     </svg>
                   </button>
-                  <div className="h-6 border-l border-slate-200 ml-2"></div>
+                  <div className="ml-2 h-6 border-l border-slate-200"></div>
                   {isDropdownOpen && (
                     <div
                       id="dropdownMenu"
-                      className="min-w-[150px] absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded-md shadow-lg z-10"
+                      className="absolute left-0 z-10 mt-10 w-full min-w-[150px] rounded-md border border-slate-200 bg-white shadow-lg"
                     >
                       <ul id="dropdownOptions">
                         <li
-                          className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
+                          className="cursor-pointer px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
                           onClick={() => handleCountrySelect('+1')}
                         >
                           USA (+1)
                         </li>
 
-
                         <li
-                          className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
+                          className="cursor-pointer px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
                           onClick={() => handleCountrySelect('+33')}
                         >
                           France (+33)
                         </li>
-                        
+
                         <li
-                          className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
+                          className="cursor-pointer px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
                           onClick={() => handleCountrySelect('+49')}
                         >
                           Germany (+49)
                         </li>
 
                         <li
-                          className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
+                          className="cursor-pointer px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
                           onClick={() => handleCountrySelect('+34')}
                         >
                           Spain (+34)
                         </li>
-
                       </ul>
                     </div>
                   )}
@@ -157,11 +157,11 @@ export default function Tryit() {
                 <input
                   id="phone-number-input"
                   type="tel"
-                  className="w-full bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md pr-3 pl-20 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                  className="ease w-full rounded-md border border-slate-200 bg-transparent py-2 pl-20 pr-3 text-sm text-white shadow-sm transition duration-300 placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:shadow focus:outline-none"
                   placeholder="123-456-7890"
                   pattern="[0-9]*"
-                  inputmode="numeric"
-                  maxlength="12"
+                  inputMode="numeric"
+                  maxLength={12}
                   required
                 />
               </div>
